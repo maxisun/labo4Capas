@@ -9,6 +9,7 @@ import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @SuppressWarnings("deprecation")
 public class Product {
@@ -27,7 +28,7 @@ public class Product {
 	@Digits(message = "una cantidad de dinero valida", integer = 30, fraction = 2)
 	private BigDecimal precio;
 	@NotNull(message = "ingrese una fecha valida")
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date fechaVencimiento;
 	/*
 	//@NotEmpty(message = "ingrese la fecha de vencimiento")
@@ -59,13 +60,6 @@ public class Product {
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
 	}
-	/*
-	public String getFechaVencimiento() {
-		return fechaVencimiento;
-	}
-	public void setFechaVencimiento(String fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
-	}*/
 	public Date getFechaVencimiento() {
 		return fechaVencimiento;
 	}

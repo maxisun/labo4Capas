@@ -28,10 +28,11 @@ public class MainController {
 		if(result.hasErrors()) {
 			mav.addObject("greet", "Ingrese un producto");
 			mav.setViewName("main");
+			//System.out.println(product.getFechaVencimiento());
 		}else {
 			mav.addObject("message", "Producto ingresado exitosamente");
 			mav.setViewName("success");
-			System.out.println(product.getFechaVencimiento().toString());
+			//System.out.println(product.getFechaVencimiento());
 		}
 		return mav;
 	}
