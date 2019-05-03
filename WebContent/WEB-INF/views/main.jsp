@@ -27,7 +27,7 @@
 		<form:errors path="precio" cssStyle="color:red;"></form:errors><br>
 		
 		<label>Fecha de Vencimiento: </label>
-		<form:input type="date" name="fechaVencimiento" field="*{fechaVencimiento}" path="fechaVencimiento"/>
+		<form:input type="text" name="fechaVencimiento" path="fechaVencimiento"/>
 		<form:errors path="fechaVencimiento" cssStyle="color:red;"></form:errors><br>
 		
 		<input type="submit" value="IngresarProducto">

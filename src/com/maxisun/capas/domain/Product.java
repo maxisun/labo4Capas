@@ -14,27 +14,23 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @SuppressWarnings("deprecation")
 public class Product {
 	
-	@NotEmpty(message = "ingrese un nombre")
-	@Size(message = "La longitud maxima es de 30 caracteres",min = 0, max = 30)
+	@NotEmpty(message = "please insert a product name")
+	@Size(message = "maximun lenght is 30 characters",min = 0, max = 30)
 	private String nombre;
-	@NotEmpty(message = "ingrese una marca")
-	@Size(message = "La longitud maxima es de 30 caracteres",min = 0, max = 30)
+	@NotEmpty(message = "please insert a product brand")
+	@Size(message = "maximun lenght is 30 characters",min = 0, max = 30)
 	private String marca;
-	@NotEmpty(message = "ingrese una descripcion")
-	@Size(message = "La longitud maxima es de 30 caracteres",min = 0, max = 30)
+	@NotEmpty(message = "please insert a product description")
+	@Size(message = "maximun lenght is 30 characters",min = 0, max = 30)
 	private String descripcion;
-	@NotNull(message="ingrese un precio")
-	@PositiveOrZero(message = "El precio debe ser un numero positivo o zero")
-	@Digits(message = "una cantidad de dinero valida", integer = 30, fraction = 2)
+	@NotNull(message="please insert a product price")
+	@PositiveOrZero(message = "price must be a positive number or zero")
+	@Digits(message = "insert a valid product price", integer = 30, fraction = 2)
 	private BigDecimal precio;
-	@NotNull(message = "ingrese una fecha valida")
-	@DateTimeFormat(iso = ISO.DATE)
+	@NotNull(message = "insert a date")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date fechaVencimiento;
-	/*
-	//@NotEmpty(message = "ingrese la fecha de vencimiento")
-	@Pattern(message="ingrese una fecha valida", regexp = "(((0[1-9]|[12][0-9]|3[01])([/])(0[13578]|10|12)([/])(\\d{4}))|(([0][1-9]|[12][0-9]|30)([/])(0[469]|11)([/])(\\d{4}))|((0[1-9]|1[0-9]|2[0-8])([/])(02)([/])(\\d{4}))|((29)(\\.|-|\\/)(02)([/])([02468][048]00))|((29)([/])(02)([/])([13579][26]00))|((29)([/])(02)([/])([0-9][0-9][0][48]))|((29)([/])(02)([/])([0-9][0-9][2468][048]))|((29)([/])(02)([/])([0-9][0-9][13579][26])))", flags = Flag.UNICODE_CASE)
-	private String fechaVencimiento;*/
-	
+
 	
 	public String getNombre() {
 		return nombre;
